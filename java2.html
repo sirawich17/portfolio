@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <button id="my+">+</button>
+        <button id="my-">-</button>
+    </div>
+
+    <script>
+        let x = 0
+        let box = document.getElementById("box");
+        let new_el = document.createElement('div')
+        new_el.innerText = x
+        box.appendChild(new_el);
+
+        function color(){
+            if(x>9){
+                new_el.style.background = "green";
+            }
+            else if (x<0){
+                new_el.style.background = "red";
+            }
+            else{
+                new_el.style.background = "";
+            }
+        
+        }
+            
+
+        let plusbutton = document.getElementById("my+")
+        plusbutton.addEventListener('click', function () {
+            x = x + 1
+            console.log(x);
+            new_el.innerText = x
+            color()
+        })
+
+
+
+        let minusbutton = document.getElementById("my-")
+        minusbutton.addEventListener('click', function () {
+            x = x - 1
+            console.log(x);
+            new_el.innerText = x
+            color()
+        })
+
+
+    </script>
+</body>
+
+</html>
